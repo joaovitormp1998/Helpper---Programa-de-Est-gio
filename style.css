@@ -1,0 +1,91 @@
+input[type=text],input[type=email]{
+  width: 40%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.clicavel {
+  cursor: pointer;
+}
+body
+{
+  background-color: gray !important;
+}
+
+.DeleteButton {
+  color: white;
+  font-weight: bold;
+  background-color: darkred;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-cliente {
+  width: 100%;
+  font-family: "Arial", Times, serif;
+}
+
+.form-cliente-input {
+  width: 100%;
+  color: #292929;
+  font-size: 18px;
+  background-color: #E9E9E9;
+  border: 1px solid #E9E9E9;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  text-indent: 20px;
+}
+
+.form-cliente-textarea {
+  width: 100%;
+  color: #292929;
+  font-size: 18px;
+  background-color: #E9E9E9;
+  border: 1px solid #E9E9E9;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  text-indent: 20px;
+  padding-top: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "Arial", Times, serif;
+}
+
+.form-cliente-button {
+  width: 100%;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #fff;
+  height: 40px;
+  opacity: .8;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: #B22222;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #500707;
+  border-right: 1px solid #500707;
+  transition: 1s;
+}
+
+.form-cliente-button:hover {
+  opacity: 1;
+}

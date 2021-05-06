@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+   <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+   <link rel="stylesheet" href="style.css" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <title>Clientes</title>
+  </head>
+  <body>
+    <h1><img src="img/helpper-logo.png" width="300px" alt="imagem de titulo"></h1>
+    <div class="container" text-align="left">
+    <form action="" method="POST" id="Formulario" class="form-cliente">
+        <div class="row">
+          <div class="col-25">
+            <label for="nome"><b> Nome:</b> </label>
+          </div>
+          <div class="col-75">
+            <input id="nome" name="nome" type="text" placeholder="Informe seu nome " />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="email"><b> Email:</b> </label>
+          </div>
+          <div class="col-75">
+            <input id="email" name="email" type="email" placeholder="Informe seu email " />
+          </div>
+            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="documento"><b> Cpf ou Cnpj:</b> </label>
+          </div>
+          <div class="col-75">
+            <input id="documento" name="documento" type="text" placeholder="Informe seu cpf ou cnpj" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="cep"><b> Cep </b></label>
+          </div>
+          <div class="col-75">
+            <input id="cep" name="cep" type="text" onkeypress="$(this).mask('00.000-000')" placeholder="Informe seu Cep " />
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="logradouro"> <b>Logradouro:</b> </label>
+            </div>
+            <div class="col-75">
+              <input id="logradouro" name="logradouro" type="text" placeholder="Informe seu Logradouro" /><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="numero"><b> Número</b> </label>
+            </div>
+            <div class="col-75">
+              <input id="numero" name="numero"  type="text" placeholder="Informe Numero" /><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="bairro"><b> Bairro</b> </label>
+            </div>
+            <div class="col-75">
+              <input id="bairro" name="bairro" type="text" placeholder="Informe Bairro" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="cidade"><b> Cidade</b> </label>
+            </div>
+            <div class="col-75">
+              <input id="cidade" name="cidade"type="text" placeholder="Informe Cidade" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-75">
+              <br>
+              <label><input style='color: #fff;' type="submit" onclick="" name="Enviar" value="Enviar Dados" class="btn btn-dark" /></label>
+              <label><input style='color: #fff;' type="reset" onclick="" name="Limpar" value="Limpar"
+                  class="btn btn-danger" /></label>
+            </div>
+          </div>
+    </form>
+    </div>
+      <h2>Clientes Cadastrados:</h2>
+      <table id="grid" class="table  table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Cpf/Cnpj</th>
+            <th scope="col">Cep</th>
+            <th scope="col">Logradouro</th>
+            <th scope="col">Número</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+          </thead>
+        <tbody>
+        </tbody>
+        <div id="nomes"></div>
+      </table>
+    <script>
+      $(document).ready(function () {
+          $('#Formulario').submit(function () {
+            var tamanho = $("#documento").val().length;
+
+            if (tamanho <= 11) {
+              $("#documento").mask("999.999.999-99");
+            } else {
+              $("#documento").mask("99.999.999/9999-99");
+            }
+            var $this = $(this);
+            var tr = '<tr>' +
+              '<td>' + $this.find("input[name='nome']").val() + '</td>' +
+              '<td>' + $this.find("input[name='email']").val() + '</td>' +
+              '<td>' + $this.find("input[name='documento']").val() + '</td>' +
+              '<td>' + $this.find("input[name='cep']").val() + '</td>' +
+              '<td>' + $this.find("input[name='logradouro']").val() + '</td>' +
+              '<td>' + $this.find("input[name='numero']").val() + '</td>' +
+              '<td>' + $this.find("input[name='bairro']").val() + '</td>' +
+              '<td>' + $this.find("input[name='cidade']").val() + '</td>' +
+              '</tr>'
+            $('#grid').find('tbody').append(tr);
+            return false;
+          });
+        });
+    </script>
+
+  </body>
+</html>
